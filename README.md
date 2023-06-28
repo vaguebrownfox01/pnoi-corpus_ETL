@@ -43,16 +43,17 @@ The dataset is organized into the following directories and files:
 
 - `PNOI_CORPUS/`
   - `README.md`: This file.
+  - `DATA_PNOISTOR/`: Raw data dump from the PnoiStor web-app
   - `DATA/`
-    - `[subject-ID]`: A folder for each subject consist of all relevant data.
+    - `[subject-ID]/`: A folder for each subject consist of all relevant data
 
-      - `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds.
+      - `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds
 
       - `[subject-ID]_[location].txt`: Text file containing annotations for the audio recording.
 
-      - `[subject-ID].json`: JSON file containing metadata for the subject.
+      - `[subject-ID].json`: JSON file containing metadata for the subject
 
-      - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject.
+      - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject
 
 ## Data format
 
@@ -213,3 +214,7 @@ Email: <jeevank@iisc.ac.in>
 ## Disclaimer
 
 The Pnoi Corpus is intended for research and educational purposes only. It is important to note that the dataset does not constitute medical advice or diagnosis. Users of this dataset are responsible for ensuring compliance with applicable ethical guidelines and regulations when using the data.
+
+## License
+
+-
