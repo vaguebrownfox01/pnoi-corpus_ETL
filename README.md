@@ -8,16 +8,14 @@ For asthmatic subjects, a post recording was made ofter administering a bronchod
 
 The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings. Each recording is accompanied by corresponding metadata, including demographic information, medical history, and the results of the PFT report.
 
----
-
-Objective: To develope a model to predict PFT (Pulmonary Function Test) results from breath sounds recorded simultaneously from two locations, mouth and chest.
+```markdown
+**Objective**: To develope a model to predict PFT (Pulmonary Function Test) results from breath sounds recorded simultaneously from two locations, mouth and chest.
+```
 
 ![data acquisition](/media/pnoi-data_acquisition.png)
 Fig. Basic data acquisition setup
 
 Pnoi-phone: A biomedical device for recording breath sounds from the mouth and chest simultaneously.
-
----
 
 ## Data Statistics
 
@@ -41,8 +39,6 @@ Pnoi-phone: A biomedical device for recording breath sounds from the mouth and c
   - Minimum duration: [Duration]
   - Maximum duration: [Duration]
 
----
-
 ## Data Organization
 
 The dataset is organized into the following directories and files:
@@ -60,7 +56,6 @@ The dataset is organized into the following directories and files:
 
       - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject.
 
----
 
 ## Data format
 
@@ -206,7 +201,7 @@ TSV file contains PFT report for the subject. The PFT report includes:
 - **FVC**: Forced Vital Capacity
 - **ratio**: FEV1/FVC
 
----
+
 
 ## Disclaimer
 
