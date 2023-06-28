@@ -13,7 +13,7 @@ The dataset consists of 150 asthma patients and 150 control subjects, totaling 3
 ![data acquisition](/media/pnoi-data_acquisition.png)
 Fig. Basic data acquisition setup
 
-Pnoi-phone: A biomedical device for recording breath sounds from the mouth and chest simultaneously.
+> **Pnoi-phone**: A biomedical device for recording breath sounds from the mouth and chest simultaneously.
 
 ## Data Statistics
 
