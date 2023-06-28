@@ -8,9 +8,42 @@ For asthmatic subjects, a post recording was made ofter administering a bronchod
 
 The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings. Each recording is accompanied by corresponding metadata, including demographic information, medical history, and the results of the PFT report.
 
-![data acquisition](/media/pnoi-data_acquisition.png)
+---
 
-## Data
+Objective: To develope a model to predict PFT (Pulmonary Function Test) results from breath sounds recorded simultaneously from two locations, mouth and chest.
+
+![data acquisition](/media/pnoi-data_acquisition.png)
+Fig. Basic data acquisition setup
+
+Pnoi-phone: A biomedical device for recording breath sounds from the mouth and chest simultaneously.
+
+---
+
+## Data Statistics
+
+- Total number of recordings: 300
+  - Asthma patients: 150
+  - Control subjects: 150
+
+- Distribution of patients by gender:
+  - Male: [Number]
+  - Female: [Number]
+  - Other: [Number]
+  
+- Age distribution:
+  - Minimum age: [Age]
+  - Maximum age: [Age]
+  - Average age: [Age]
+  - Median age: [Age]
+
+- Additional statistics:
+  - Average duration of breath sound recordings: [Duration]
+  - Minimum duration: [Duration]
+  - Maximum duration: [Duration]
+
+---
+
+## Data Organization
 
 The dataset is organized into the following directories and files:
 
@@ -26,6 +59,10 @@ The dataset is organized into the following directories and files:
       - `[subject-ID].json`: JSON file containing metadata for the subject.
 
       - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject.
+
+---
+
+## Data format
 
 ### Audio file
 
@@ -77,7 +114,7 @@ The subjects are also requested to recite sustained phonation of the vowels /a/,
   
 - Are optional infornation to uniquely identify the file and add any comments about the recording.
 
-!["Two channels breath audio annotation"](media/pnoi-2channel_ba-anotes.png)
+!["Two channels breath audio annotation"](media/pnoi-na_annotation-audacity.png)
 
 Fig. Spectrogram showing two channels breath audio annotated with respective labels.
 
@@ -152,6 +189,7 @@ JSON file contains metadata for the subject. The metadata includes:
 }
 
 ```
+
 ### PFT Report
 
 #### Nomenclature: Same as Audio file, but with `.json` extension and with file tag `PFT`
@@ -168,3 +206,8 @@ TSV file contains PFT report for the subject. The PFT report includes:
 - **FVC**: Forced Vital Capacity
 - **ratio**: FEV1/FVC
 
+---
+
+## Disclaimer
+
+The Pnoi Corpus is intended for research and educational purposes only. It is important to note that the dataset does not constitute medical advice or diagnosis. Users of this dataset are responsible for ensuring compliance with applicable ethical guidelines and regulations when using the data.
