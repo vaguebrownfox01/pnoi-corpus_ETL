@@ -54,7 +54,6 @@ The dataset is organized into the following directories and files:
 
       - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject.
 
-
 ## Data format
 
 ### Audio file
@@ -199,7 +198,17 @@ TSV file contains PFT report for the subject. The PFT report includes:
 - **FVC**: Forced Vital Capacity
 - **ratio**: FEV1/FVC
 
+## Contact Information
 
+For any questions or inquiries regarding the dataset, please contact:
+
+### **Jeevan K**
+
+Junior Research Fellow,
+
+EE Dept., SPIRE Lab, IISc Bangalore, India
+
+Email: <jeevank@iisc.ac.in>
 
 ## Disclaimer
 
