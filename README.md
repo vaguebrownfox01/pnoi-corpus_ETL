@@ -8,9 +8,7 @@ For asthmatic subjects, a post recording was made ofter administering a bronchod
 
 The dataset consists of 150 asthma patients and 150 control subjects, totaling 300 recordings. Each recording is accompanied by corresponding metadata, including demographic information, medical history, and the results of the PFT report.
 
-```markdown
-**Objective**: To develope a model to predict PFT (Pulmonary Function Test) results from breath sounds recorded simultaneously from two locations, mouth and chest.
-```
+> **Objective**: To develope a model to predict PFT (Pulmonary Function Test) results from breath sounds recorded simultaneously from two locations, mouth and chest.
 
 ![data acquisition](/media/pnoi-data_acquisition.png)
 Fig. Basic data acquisition setup
