@@ -1,3 +1,4 @@
 .git.key
 DATA*/*
+SCRIPTS/pnoi-anotest/DATA_DUMMY/*
 env-*
