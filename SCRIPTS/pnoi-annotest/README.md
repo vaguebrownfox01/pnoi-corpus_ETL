@@ -17,5 +17,4 @@ Annotest is for validating the Pnoi dataset and its corresponding annotations, r
 
 ## Annotation Scheme
 
-![Annotation Scheme](/media/pnoi-annotation_scheme.png
-)
+![Annotation Scheme](/media/pnoi-annotation_scheme.png)
