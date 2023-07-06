@@ -8,6 +8,7 @@ import json
 import os
 import sys
 
+DATA = "DATA_DUMMY/pnoistor_mmmYYYY"
 
 BREATH_LABELS = [
     # begining vowels
@@ -22,12 +23,50 @@ BREATH_LABELS = [
     # end vowels
     "aa", "ee", "uu", "oo",
 ]
+# BREATH_LABELS_df: pd.DataFrame
+# sub_files_df: pd.DataFrame
+SUB_FILE_FORMAT = [
+    # META data
+    "pnoistor_feb2023-SID-META-HS-comnt.json",
 
-# Breath Annotation dataframe
-BREATH_LABELS_df = pd.DataFrame(BREATH_LABELS, columns=["label"])
-BREATH_LABELS_df["start"] = list(range(0, len(BREATH_LABELS_df) * 4, 4))
-BREATH_LABELS_df["start"] += 2.5
-BREATH_LABELS_df["end"] = BREATH_LABELS_df["start"] + 4
+    # LBA before 4 locations
+    "pnoistor_feb2023-SID-LBA_before_LU-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_before_RU-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_before_LL-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_before_RL-HS-comnt.wav",
+
+    # LBA after 4 locations
+    "pnoistor_feb2023-SID-LBA_after_LU-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_after_RU-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_after_LL-HS-comnt.wav",
+    "pnoistor_feb2023-SID-LBA_after_RL-HS-comnt.wav",
+
+    # VBA before 4 locations
+    "pnoistor_feb2023-SID-VBA_before-HS-comnt.wav",
+    # VBA after 4 locations
+    "pnoistor_feb2023-SID-VBA_after-HS-comnt.wav",
+
+    # PFT before
+    "pnoistor_feb2023-SID-PFT_before-HS-comnt.pdf",
+    # PFT after
+    "pnoistor_feb2023-SID-PFT_after-HS-comnt.pdf",
+
+    # Annotations: LBA, VBA, PFT
+    "pnoistor_feb2023-SID-LBA_before_LU-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_before_RU-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_before_LL-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_before_RL-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_after_LU-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_after_RU-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_after_LL-HS-comnt.txt",
+    "pnoistor_feb2023-SID-LBA_after_RL-HS-comnt.txt",
+    "pnoistor_feb2023-SID-VBA_before-HS-comnt.txt",
+    "pnoistor_feb2023-SID-VBA_after-HS-comnt.txt",
+
+    "pnoistor_feb2023-SID-PFT_after-HS-comnt.tsv",
+    "pnoistor_feb2023-SID-PFT_before-HS-comnt.tsv",
+]
+sub_files_df_columns = ["app_code", "sid", "class", "hs", "ext"]
 
 # 
 def create_anotes(fpath: str) -> None:
@@ -135,57 +174,6 @@ def create_meta(sid, n):
     }
 
 
-sub_files = [
-    # META data
-    "pnoistor_feb2023-SID-META-HS-comnt.json",
-
-    # LBA before 4 locations
-    "pnoistor_feb2023-SID-LBA_before_LU-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_before_RU-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_before_LL-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_before_RL-HS-comnt.wav",
-
-    # LBA after 4 locations
-    "pnoistor_feb2023-SID-LBA_after_LU-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_after_RU-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_after_LL-HS-comnt.wav",
-    "pnoistor_feb2023-SID-LBA_after_RL-HS-comnt.wav",
-
-    # VBA before 4 locations
-    "pnoistor_feb2023-SID-VBA_before-HS-comnt.wav",
-    # VBA after 4 locations
-    "pnoistor_feb2023-SID-VBA_after-HS-comnt.wav",
-
-    # PFT before
-    "pnoistor_feb2023-SID-PFT_before-HS-comnt.pdf",
-    # PFT after
-    "pnoistor_feb2023-SID-PFT_after-HS-comnt.pdf",
-
-    # Annotations: LBA, VBA, PFT
-    "pnoistor_feb2023-SID-LBA_before_LU-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_before_RU-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_before_LL-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_before_RL-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_after_LU-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_after_RU-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_after_LL-HS-comnt.txt",
-    "pnoistor_feb2023-SID-LBA_after_RL-HS-comnt.txt",
-    "pnoistor_feb2023-SID-VBA_before-HS-comnt.txt",
-    "pnoistor_feb2023-SID-VBA_after-HS-comnt.txt",
-
-    "pnoistor_feb2023-SID-PFT_after-HS-comnt.tsv",
-    "pnoistor_feb2023-SID-PFT_before-HS-comnt.tsv",
-]
-
-sub_files_df = pd.DataFrame([fn.split("-") for fn in sub_files])
-sub_files_df.columns = ["app_code", "sid", "class", "hs", "ext"]
-
-DATA = "DATA_DUMMY"
-if os.path.exists(DATA):
-    shutil.rmtree(DATA)
-
-os.mkdir(DATA)
-
 # create fake subjects
 def sub_ids(N, sn=7):
 
@@ -242,6 +230,24 @@ def make_sub_files(sid, n):
 def create_fake_dataset(N):
     return [make_sub_files(sid, n) for n, sid in enumerate(sub_ids(N))]
 
+def prep():
+    if os.path.exists(DATA):
+        shutil.rmtree(DATA)
+
+    os.makedirs(DATA)
+
+    _sub_files_df = pd.DataFrame([fn.split("-") for fn in SUB_FILE_FORMAT])
+    _sub_files_df.columns = sub_files_df_columns
+
+    # Breath Annotation dataframe
+    _BREATH_LABELS_df = pd.DataFrame(BREATH_LABELS, columns=["label"])
+    _BREATH_LABELS_df["start"] = list(range(0, len(_BREATH_LABELS_df) * 4, 4))
+    _BREATH_LABELS_df["start"] += 2.5
+    _BREATH_LABELS_df["end"] = _BREATH_LABELS_df["start"] + 4
+
+    return _sub_files_df, _BREATH_LABELS_df
+
+sub_files_df, BREATH_LABELS_df = prep()
 
 if __name__ == "__main__":
 
@@ -252,6 +258,10 @@ if __name__ == "__main__":
         exit(-1)
 
     try:
-        print(create_fake_dataset(int(args[1])))
-    except:
-        print("input integer only")
+        subject_ids = create_fake_dataset(int(args[1]))
+
+
+        print(f"created {len(subject_ids)} subjects", subject_ids)
+
+    except Exception as e:
+        print("Error: ", e)
