@@ -22,3 +22,17 @@ Audio annotations are done using Audacity <https://www.audacityteam.org/>. The a
 ## Annotation Scheme
 
 ![Annotation Scheme](/media/pnoi-annotation_scheme.png)
+
+## Usage
+
+1. Clone the repository
+2. Set the `PNOI_DATA_DIR` environment variable to the path of the dataset directory.
+3. Execute the python notebook `pnoi-annotest.ipynb`
+4. Check the generated report for any errors or inconsistencies.
+5. Fix the errors and rerun the script to verify the fixes.
+
+## Data Statistics
+
+- Total number of recordings: 300
+  - Asthma patients: 150
+  - Control subjects: 150
