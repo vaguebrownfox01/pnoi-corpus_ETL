@@ -17,43 +17,46 @@ Fig. Basic data acquisition setup
 
 ## Data Statistics
 
-- Total number of recordings: 300
-  - Asthma patients: 150
-  - Control subjects: 150
+-   Total number of recordings: 300
 
-- Distribution of patients by gender:
-  - Male: [Number]
-  - Female: [Number]
-  - Other: [Number]
-  
-- Age distribution:
-  - Minimum age: [Age]
-  - Maximum age: [Age]
-  - Average age: [Age]
-  - Median age: [Age]
+    -   Asthma patients: 150
+    -   Control subjects: 150
 
-- Additional statistics:
-  - Average duration of breath sound recordings: [Duration]
-  - Minimum duration: [Duration]
-  - Maximum duration: [Duration]
+-   Distribution of patients by gender:
+    -   Male: [Number]
+    -   Female: [Number]
+    -   Other: [Number]
+-   Age distribution:
+
+    -   Minimum age: [Age]
+    -   Maximum age: [Age]
+    -   Average age: [Age]
+    -   Median age: [Age]
+
+-   Additional statistics:
+    -   Average duration of breath sound recordings: [Duration]
+    -   Minimum duration: [Duration]
+    -   Maximum duration: [Duration]
 
 ## Data Organization
 
 The dataset is organized into the following directories and files:
 
-- `PNOI_CORPUS/`
-  - `README.md`: This file.
-  - `DATA_PNOISTOR/`: Raw data dump from the PnoiStor web-app
-  - `DATA/`
-    - `[subject-ID]/`: A folder for each subject consist of all relevant data
+-   `PNOI_CORPUS/`
 
-      - `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds
+    -   `README.md`: This file.
+    -   `DATA_PNOISTOR/`: Raw data dump from the PnoiStor web-app
+    -   `DATA/`
 
-      - `[subject-ID]_[location].txt`: Text file containing annotations for the audio recording.
+        -   `[subject-ID]/`: A folder for each subject consist of all relevant data
 
-      - `[subject-ID].json`: JSON file containing metadata for the subject
+            -   `[subject-ID]_[location].wav`: Two channels audio recording of the subject's breathing sounds
 
-      - `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject
+            -   `[subject-ID]_[location].txt`: Text file containing annotations for the audio recording.
+
+            -   `[subject-ID].json`: JSON file containing metadata for the subject
+
+            -   `[subject-ID].tsv`: TSV file containing the results of the PFT report for the subject
 
 ## Data format
 
@@ -61,23 +64,23 @@ The dataset is organized into the following directories and files:
 
 #### Nomenclature: seperated by \"-\"
 
-- [`data_version`]: Month and Year of data collection
-- [`subject-ID`]: Unique ID for each subject
-- [`location`]: Location of the recording on the posterior chest
-  - `BA`: "Breath Audio file tag",
-  - `before/after`: "before" or "after" administration of bronchodilator
-  - `location`:
-    1. `LU`: "Left Upper Lobe",
-    2. `RU`: "Right Upper Lobe",
-    3. `LL`: "Left Lower Lobe",
-    4. `RL`: "Right Lower Lobe",
-- [`file-ID`]: Unique ID for each recording file
-- [`comment`]: Additional information about the recording
+-   [`data_version`]: Month and Year of data collection
+-   [`subject-ID`]: Unique ID for each subject
+-   [`location`]: Location of the recording on the posterior chest
+    -   `BA`: "Breath Audio file tag",
+    -   `before/after`: "before" or "after" administration of bronchodilator
+    -   `location`:
+        1. `LU`: "Left Upper Lobe",
+        2. `RU`: "Right Upper Lobe",
+        3. `LL`: "Left Lower Lobe",
+        4. `RL`: "Right Lower Lobe",
+-   [`file-ID`]: Unique ID for each recording file
+-   [`comment`]: Additional information about the recording
 
 The audio file contains TWO channels for breath sounds recorded simultaneously from the mouth and chest of the subject.
 
-- Channel 0: Mouth
-- Channel 1: Chest
+-   Channel 0: Mouth
+-   Channel 1: Chest
 
 `EXAMPLE`: pnoistor_oct07-amartyaveer_81b8f33c-BA_before_LL-c03e-lateupl.wav
 
@@ -85,13 +88,13 @@ The audio file contains TWO channels for breath sounds recorded simultaneously f
 
 #### Nomenclature: Same as Audio file, but with `.txt` extension
 
-- **values are tab separated.**
+-   **values are tab separated.**
 
 The annotation file contains the following information:
 
-- `begin`: Start time of the annotation in seconds
-- `end`: End time of the annotation in seconds
-- `label`: Label of the annotation
+-   `begin`: Start time of the annotation in seconds
+-   `end`: End time of the annotation in seconds
+-   `label`: Label of the annotation
 
 `EXAMPLE`: pnoistor_oct07-amartyaveer_81b8f33c-BA_before_LL-c03e-lateupl.txt
 
@@ -104,8 +107,8 @@ The subjects are also requested to recite sustained phonation of the vowels /a/,
 `bb[n]`: marks a single breathing session consisting of Five breaths recorded at a single location. n encodes the location of the recording.
 
 #### File ID and Comments
-  
-- Are optional infornation to uniquely identify the file and add any comments about the recording.
+
+-   Are optional infornation to uniquely identify the file and add any comments about the recording.
 
 !["Two channels breath audio annotation"](media/pnoi-na_annotation-audacity.png)
 
@@ -188,16 +191,16 @@ JSON file contains metadata for the subject. The metadata includes:
 #### Nomenclature: Same as Audio file, but with `.json` extension and with file tag `PFT`
 
 TSV file contains PFT report for the subject. The PFT report includes:
-| PFT     | FEV1 | FVC  | ratio |
+| PFT | FEV1 | FVC | ratio |
 |---------|------|------|-------|
-| **ref** | 1.58 | 1.91 | 77    |
-| **val** | 1.48 | 1.63 | 91    |
+| **ref** | 1.58 | 1.91 | 77 |
+| **val** | 1.48 | 1.63 | 91 |
 
-- **ref**: Reference value (predicted value) for the subject
-- **val**: Measured value for the subject
-- **FEV1**: Forced Expiratory Volume in 1 second
-- **FVC**: Forced Vital Capacity
-- **ratio**: FEV1/FVC
+-   **ref**: Reference value (predicted value) for the subject
+-   **val**: Measured value for the subject
+-   **FEV1**: Forced Expiratory Volume in 1 second
+-   **FVC**: Forced Vital Capacity
+-   **ratio**: FEV1/FVC
 
 ## Contact Information
 
@@ -214,7 +217,3 @@ Email: <jeevank@iisc.ac.in>
 ## Disclaimer
 
 The Pnoi Corpus is intended for research and educational purposes only. It is important to note that the dataset does not constitute medical advice or diagnosis. Users of this dataset are responsible for ensuring compliance with applicable ethical guidelines and regulations when using the data.
-
-## License
-
--
