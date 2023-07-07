@@ -4,3 +4,4 @@ SCRIPTS/pnoi-anotest/DATA_DUMMY/*
 env-*
 **/reports/*
 SCRIPTS/pnoi-dataETL/report/*.csv
+SCRIPTS/pnoi-experiments/DATA_PNOISTOR
