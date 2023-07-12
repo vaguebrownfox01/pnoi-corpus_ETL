@@ -5,3 +5,5 @@ env-*
 **/reports/*
 SCRIPTS/pnoi-dataETL/report/*.csv
 SCRIPTS/pnoi-experiments/DATA_PNOISTOR
+*.zip
+*__
