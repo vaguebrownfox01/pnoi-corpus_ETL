@@ -203,11 +203,11 @@ TSV file contains PFT report for the subject. The PFT report includes:
 
 For any questions or inquiries regarding the dataset, please contact:
 
-### **Jeevan K**
+### **Jeevan Kylash**
 
-Junior Research Fellow,
+Project Associate,
 
-EE Dept., SPIRE Lab, IISc Bangalore, India
+SPIRE Lab, EE Dept., IISc Bangalore, India
 
 Email: <jeevank@iisc.ac.in>
 

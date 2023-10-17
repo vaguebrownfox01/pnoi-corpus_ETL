@@ -1,0 +1,2 @@
+#/bin/bash
+rsync -avzu ./ wtc14@10.64.26.81:/data/pnoicorpus_etl --delete #--dry-run
