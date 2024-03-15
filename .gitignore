@@ -2,7 +2,7 @@
 DATA*/*
 SCRIPTS/pnoi-anotest/DATA_DUMMY/*
 env-*
-**/reports/*
+**/report*/*
 SCRIPTS/pnoi-dataETL/report/*.csv
 SCRIPTS/pnoi-experiments/DATA_PNOISTOR
 *.zip
