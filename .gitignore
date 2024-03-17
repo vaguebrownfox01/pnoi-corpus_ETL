@@ -1,8 +1,8 @@
 .git.key
-DATA*/*
+**/DATA_*/*
 SCRIPTS/pnoi-anotest/DATA_DUMMY/*
 env-*
-**/report*/*
+**/*report*/*
 SCRIPTS/pnoi-dataETL/report/*.csv
 SCRIPTS/pnoi-experiments/DATA_PNOISTOR
 *.zip
